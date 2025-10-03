@@ -56,7 +56,7 @@ const Main = () => {
   }
 
   const fetchData = () => {
-    fetch("http://localhost:3000/api/gamesData.json")
+    fetch("https://c311dedd641577af.mokky.dev/gamesData")
       .then((res) => res.json())
       .then((data) => {
         setGames(data)
