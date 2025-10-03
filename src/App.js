@@ -1,24 +1,38 @@
 import logo from './logo.svg';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css"
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import Main from './pages/Main/Main';
+
+export const AppContext = React.createContext();
 
 function App() {
+
+  const [bag, setBag] = useState(() => {
+    const savedBag = localStorage.getItem('bag');
+    return savedBag ? JSON.parse(savedBag) : [];
+  });
+
+  const [library, setLibrary] = useState(() => {
+    const savedLibrary = localStorage.getItem('library');
+    return savedLibrary ? JSON.parse(savedLibrary) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('bag', JSON.stringify(bag));
+  }, [bag]);
+
+  useEffect(() => {
+    localStorage.setItem('library', JSON.stringify(library));
+  }, [library]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <AppContext.Provider value={{ library, setLibrary, bag, setBag }}>
+        <Main />
+      </AppContext.Provider>
+    </>
   );
 }
 

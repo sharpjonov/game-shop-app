@@ -1,0 +1,56 @@
+.shopBagTable {
+    width: 100%;
+    color: #ffffff;
+    border-radius: 20px;
+    background: var(--bgColor);
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+        5px 5px 15px rgba(0, 0, 0, 0.35);
+    margin: 0;
+    table-layout: auto;
+    min-width: 700px; 
+}
+
+.shopBagTable thead tr {
+    font-size: 1.3rem;
+}
+
+.shopBagTable tbody tr th {
+    background: transparent;
+    color: #ffffff;
+}
+
+.bag .container-fluid {
+    padding: 32px 16px 32px 16px;
+}
+
+.shopBagItem img {
+    width: 100px;
+    height: 60px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+.shopBagItem td,
+.shopBagItem th {
+    background: transparent;
+    color: #ffffff;
+    font-size: 1.1rem;
+    vertical-align: middle;
+    word-break: break-word; 
+    max-width: 180px;
+}
+
+.shopBagItem .gameTitle {
+    white-space: normal;
+    word-break: break-word;
+}
+
+
+td a {
+    color: #f41e1e;
+    text-decoration: none;
+    font-size: 1.2rem;
+}

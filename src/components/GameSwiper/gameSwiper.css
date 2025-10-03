@@ -1,0 +1,146 @@
+.gameSwiper {
+  width: 90%;
+  padding-bottom: 30px;
+}
+
+.gameSwiper .swiper-slide {
+  width: 550px;
+  height: 350px;
+}
+
+.gameSlider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    padding: 30px;
+    overflow: hidden;
+}
+
+.gameSlider::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 30px !important;
+}
+
+.swiper-slide img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    backdrop-filter: blur(20px);
+    bottom: 0 !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.gameSlider .content {
+    position: absolute;
+    bottom: 20px;
+    z-index: 1000;
+    width: 60%;
+}
+
+.gameSlider .content h2 {
+    font-family: "Bauhaus V1";
+    font-size: 3.5rem;
+}
+
+.gameSlider .content p {
+    color: #ebebeb;
+    font-size: 0.8rem;
+}
+
+.gameSlider .content .buttons {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.gameSlider .content .buttons a {
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.gameSlider .content .buttons .orderBtn {
+    padding: 8px 20px;
+    background: var(--second);
+    border-radius: 10px;
+}
+
+.gameSlider .content .buttons .playBtn {
+    height: 50px;
+    width: 50px;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(20px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+}
+
+.playBtn .play {
+    display: block;
+
+}
+
+.playBtn .pause {
+    display: none;
+}
+
+.swiper-slide.swiper-slide-active .playBtn.active .play {
+    display: none;
+}
+
+.swiper-slide.swiper-slide-active .playBtn.active .pause {
+    display: block;
+}
+
+.swiper-slide .video iframe {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 85%;
+    height: 75%;
+    border-radius: 0 30px 0 30px !important;
+    border: 5px solid transparent;
+    background: var(--second);
+    box-shadow: -5px -5px 15px #ffffff1a, 5px 5px 15px rgba(0, 0, 0, 0.35);
+    z-index: 1100;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.5s;
+    transform-origin: top right;
+}
+
+.swiper-slide.swiper-slide-active .video.active iframe {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+}
